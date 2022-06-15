@@ -15,11 +15,11 @@ scrapy startproject projectName
 cd projectName
 scrapy genspider bilibili bilibili.com        
 ```
+/# 在spiders文件夹下会创建一个 bilibili.py 的文件, 用于爬取bilibili的内容, 同时bilibili也会成为该爬虫的Name
 
-# 在spiders文件夹下会创建一个 bilibili.py 的文件, 用于爬取bilibili的内容, 同时bilibili也会成为该爬虫的Name
 ### 3. 完善解析代码
-在对应的Spider文件中, 需要完善parse函数, 其内部实现的是对指定url的具体解析
 ```python
+在对应的Spider文件中, 需要完善parse函数, 其内部实现的是对指定url的具体解析
 def parse(self, response):
     hrefs = response.xpath('//div[@class="bili-video-card__info--right"]/a/@href').extract()                                                    # 获取指定节点的属性内容 
     titles = response.xpath('//div[@class="bili-video-card__info--right"]//h3/@title').extract()                                                # 获取指定节点的属性内容
