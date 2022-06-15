@@ -14,8 +14,8 @@ scrapy startproject projectName
 ```python
 cd projectName
 scrapy genspider bilibili bilibili.com        
+# 在spiders文件夹下会创建一个 bilibili.py 的文件, 用于爬取bilibili的内容, 同时bilibili也会成为该爬虫的Name
 ```
-/# 在spiders文件夹下会创建一个 bilibili.py 的文件, 用于爬取bilibili的内容, 同时bilibili也会成为该爬虫的Name
 
 ### 3. 完善解析代码
 ```python
